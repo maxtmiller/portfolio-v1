@@ -33,7 +33,7 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-6"
           >
-            <Card className="bg-card/50 backdrop-blur border-primary/10 shadow-lg">
+            <Card className="bg-card/50 backdrop-blur border-primary/10 shadow-lg bg-gray-800/50 backdrop-blur rounded-xl overflow-hidden border border-gray-700/50 hover:border-primary/30">
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-center text-xl">
                   <User className="mr-2 h-5 w-5 text-primary" />
@@ -50,7 +50,7 @@ export default function About() {
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 backdrop-blur border-primary/10 shadow-lg">
+            <Card className="bg-card/50 backdrop-blur border-primary/10 shadow-lg bg-gray-800/50 backdrop-blur rounded-xl overflow-hidden border border-gray-700/50 hover:border-primary/30">
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-center text-xl">
                   <GraduationCap className="mr-2 h-5 w-5 text-primary" />
@@ -60,14 +60,14 @@ export default function About() {
               <CardContent>
                 <div className="space-y-4">
                 <div className="border-l-2 border-primary/50 pl-4 py-2 flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-lg overflow-hidden border-2 border-primary/20 shadow-lg shadow-primary/20 flex-shrink-0">
+                  <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                     <Image
                       src={"/waterloo_logo.png?height=80&width=80" || "/placeholder.svg"}
                       alt={"Waterloo"}
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent mix-blend-overlay"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br to-transparent mix-blend-overlay"></div>
                   </div>
                   <div>
                     <h4 className="font-semibold">University of Waterloo</h4>
@@ -79,7 +79,7 @@ export default function About() {
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 backdrop-blur border-primary/10 shadow-lg">
+            <Card className="bg-card/50 backdrop-blur border-primary/10 shadow-lg bg-gray-800/50 backdrop-blur rounded-xl overflow-hidden border border-gray-700/50 hover:border-primary/30">
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-center text-xl">
                   <Wrench className="mr-2 h-5 w-5 text-primary" />

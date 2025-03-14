@@ -76,14 +76,14 @@ export default function Experience() {
                           index % 2 === 0 ? "md:justify-end md:order-2" : "md:justify-start md:order-1"
                         }`}
                       >
-                        <div className="relative w-16 h-16 rounded-lg overflow-hidden border-2 border-primary/20 shadow-lg shadow-primary/20 flex-shrink-0">
+                        <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                           <Image
                             src={exp.image || "/placeholder.svg"}
                             alt={exp.company}
                             fill
                             className="object-cover"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent mix-blend-overlay"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br to-transparent mix-blend-overlay"></div>
                         </div>
                       </div>
 

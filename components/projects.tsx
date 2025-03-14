@@ -112,7 +112,6 @@ export default function Projects() {
                         ? {
                             margin: "0 auto",
                             top: "0 !important",
-                            // width: "50% !important",
                           }
                         : {}
                     }

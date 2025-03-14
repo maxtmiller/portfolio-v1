@@ -25,7 +25,7 @@ const projects = [
     image: "/crpytocompanion_cover.png?height=300&width=500",
     tags: ["Node.js", "React", "CohereAPI"],
     github: "https://github.com/maxtmiller/Crypto-Companion",
-    demo: "#",
+    demo: "https://crypto-companion-three.vercel.app/",
   },
   {
     title: "Spot Sense",

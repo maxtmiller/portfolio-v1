@@ -42,7 +42,7 @@ export default function About() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  I&apos;m Maximilian Miller, a passionate backend developer and student with a keen interest in emerging technologies, especially LLMs and AI agents.
+                  I&apos;m a passionate backend developer and student with a keen interest in emerging technologies, especially LLMs and AI agents.
                 </p>
                 <p className="text-muted-foreground">
                   When I&apos;m not coding, you can find me hiking, skiing, learning about geography, playing table tennis or reading autobiographies, especially from Walter Isaacson.

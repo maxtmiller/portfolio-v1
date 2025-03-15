@@ -32,7 +32,7 @@ const projects = [
     description:
       "A user-friendly web app that simplifies skin cancer detection through real-time detection, and instant advice.",
     image: "/spotsense_cover.png?height=300&width=500",
-    tags: ["Flask", "Tensorflow", "Pillow"],
+    tags: ["Flask", "Tensorflow", "Firebase"],
     github: "https://github.com/maxtmiller/Spot-Sense",
     demo: "https://youtu.be/dvp7egOsSl4",
   },

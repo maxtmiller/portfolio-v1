@@ -41,15 +41,6 @@ export default function Footer() {
                 <Linkedin className="h-6 w-6" />
               </Link>
               <Link
-                href="https://www.instagram.com/maxtmiller0/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-6 w-6" />
-              </Link>
-              <Link
                 href="mailto:mtmlr101@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Email"

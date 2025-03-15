@@ -87,7 +87,7 @@ export default function About() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   {["JavaScript", "Node.js", "MongoDB", "Python", "Flask", "Firebase"].map((skill) => (
                     <div key={skill} className="flex items-center">
                       <div className="h-2 w-2 rounded-full bg-primary mr-2"></div>

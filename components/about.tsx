@@ -45,7 +45,7 @@ export default function About() {
                   I&apos;m a passionate backend developer and student with a keen interest in emerging technologies, especially LLMs and AI agents.
                 </p>
                 <p className="text-muted-foreground">
-                  When I&apos;m not coding, you can find me hiking, skiing, learning about geography, playing table tennis or reading autobiographies, especially from Walter Isaacson.
+                  When I&apos;m not coding, you can find me hiking, skiing, learning about geography, playing table tennis or reading biographies, especially from Walter Isaacson.
                 </p>
               </CardContent>
             </Card>

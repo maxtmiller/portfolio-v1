@@ -1,11 +1,35 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { GraduationCap, User, Wrench } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
+import { useEffect, useState } from "react"
+
+const images = [
+  "/background1.jpg?height=600&width=400&text=Germany",
+  "/background2.jpg?height=600&width=400&text=Thailand",
+  "/background3.jpg?height=600&width=400&text=Austria",
+  "/background4.jpg?height=600&width=400&text=Italy",
+  "/background5.jpg?height=600&width=400&text=USA",
+]
 
 export default function About() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true)
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
+        setIsAnimating(false)
+      }, 500)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section id="about" className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4">
@@ -107,14 +131,52 @@ export default function About() {
             className="relative"
           >
             <div className="relative h-[550px] w-full rounded-lg overflow-hidden shadow-xl shadow-primary/20">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-primary/20 z-10 mix-blend-overlay"></div>
-              <Image
-                src="/background.jpg?height=600&width=400"
-                alt="Scenary"
-                fill
-                className="object-cover"
-              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-primary/20 z-10 mix-blend-overlay pointer-events-none"></div>
+
+              {/* Image Carousel */}
+              <div className="relative w-full h-full">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentImageIndex}
+                    initial={{ opacity: 0, scale: isAnimating ? 1.1 : 1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={images[currentImageIndex] || "/placeholder.svg"}
+                      alt={`Maximilian Miller - ${currentImageIndex}`}
+                      fill
+                      className="object-cover"
+                      priority={currentImageIndex === 0}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Image Indicators */}
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+                  {images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setIsAnimating(true)
+                        setTimeout(() => {
+                          setCurrentImageIndex(index)
+                          setIsAnimating(false)
+                        }, 500)
+                      }}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentImageIndex ? "bg-primary w-6" : "bg-white/50"
+                      }`}
+                      aria-label={`View image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
+
+            {/* Background effects */}
             <div className="absolute -bottom-6 -right-6 h-48 w-48 bg-primary/10 rounded-full blur-3xl z-0"></div>
             <div className="absolute -top-6 -left-6 h-48 w-48 bg-primary/10 rounded-full blur-3xl z-0"></div>
           </motion.div>

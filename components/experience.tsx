@@ -18,7 +18,7 @@ const experiences = [
     image: "/artemed_logo.png?height=80&width=80",
   },
   {
-    title: "Software Work Experience",
+    title: "Student Work Experience",
     company: "Google",
     location: "Munich, DE",
     period: "Jun 2022 - Jul 2022",

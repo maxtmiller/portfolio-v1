@@ -34,7 +34,7 @@ const projects = [
     image: "/spotsense_cover.png?height=300&width=500",
     tags: ["Flask", "Tensorflow", "Pillow"],
     github: "https://github.com/maxtmiller/Spot-Sense",
-    demo: "https://spot-sense.vercel.app/",
+    demo: "https://youtu.be/dvp7egOsSl4",
   },
   {
     title: "AI Vault",
@@ -155,7 +155,7 @@ export default function Projects() {
                       className="text-muted-foreground hover:text-primary group"
                     >
                       <span>
-                        {project.title === "Uniply" || project.title === "AI Vault" || project.title === "Fluent Flow" ? "View Demo" : "View Project"}
+                        {project.title === "Uniply" || project.title === "AI Vault" || project.title === "Fluent Flow" || project.title === "Spot Sense" ? "View Demo" : "View Project"}
                       </span>
                       <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </a>

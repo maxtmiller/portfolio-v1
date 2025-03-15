@@ -10,25 +10,45 @@ const images = [
   "/background1.jpg?height=600&width=400&text=Germany",
   "/background2.jpg?height=600&width=400&text=Thailand",
   "/background3.jpg?height=600&width=400&text=Austria",
+  "/background6.jpg?height=600&width=400&text=Spain",
   "/background4.jpg?height=600&width=400&text=Italy",
   "/background5.jpg?height=600&width=400&text=USA",
+  "/background8.jpg?height=600&width=400&text=Czechia",
 ]
 
 export default function About() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
+  const [nextImageIndex, setNextImageIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true)
+      // Start transition
+      const next = (currentImageIndex + 1) % images.length
+      setNextImageIndex(next)
+      setIsTransitioning(true)
+
+      // After transition completes, update current image
       setTimeout(() => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
-        setIsAnimating(false)
-      }, 500)
-    }, 5000)
+        setCurrentImageIndex(next)
+        setIsTransitioning(false)
+      }, 1000) // Match the transition duration
+    }, 7000) // Change image every 5 seconds
 
     return () => clearInterval(interval)
-  }, [])
+  }, [currentImageIndex])
+
+  const handleIndicatorClick = (index: number): void  => {
+    if (index === currentImageIndex || isTransitioning) return
+
+    setNextImageIndex(index)
+    setIsTransitioning(true)
+
+    setTimeout(() => {
+      setCurrentImageIndex(index)
+      setIsTransitioning(false)
+    }, 1000)
+  }
 
   return (
     <section id="about" className="py-20 relative overflow-hidden">
@@ -131,45 +151,63 @@ export default function About() {
             className="relative"
           >
             <div className="relative h-[550px] w-full rounded-lg overflow-hidden shadow-xl shadow-primary/20">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-primary/20 z-10 mix-blend-overlay pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-primary/20 z-20 mix-blend-overlay pointer-events-none"></div>
 
-              {/* Image Carousel */}
+              {/* Image Carousel with Crossfade Effect */}
               <div className="relative w-full h-full">
-                <AnimatePresence mode="wait">
+                {/* Current Image */}
+                <div className="absolute inset-0">
+                  <Image
+                    src={images[currentImageIndex] || "/placeholder.svg"}
+                    alt={`Maximilian Miller - ${currentImageIndex + 1}`}
+                    fill
+                    className="object-cover"
+                    priority={currentImageIndex === 0}
+                  />
+                </div>
+
+                {/* Next Image (shown during transition) */}
+                {isTransitioning && (
                   <motion.div
-                    key={currentImageIndex}
-                    initial={{ opacity: 0, scale: isAnimating ? 1.1 : 1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 1, ease: "easeInOut" }}
                     className="absolute inset-0"
                   >
                     <Image
-                      src={images[currentImageIndex] || "/placeholder.svg"}
-                      alt={`Maximilian Miller - ${currentImageIndex}`}
+                      src={images[nextImageIndex] || "/placeholder.svg"}
+                      alt={`Maximilian Miller - ${nextImageIndex + 1}`}
                       fill
                       className="object-cover"
-                      priority={currentImageIndex === 0}
                     />
                   </motion.div>
-                </AnimatePresence>
+                )}
+
+                {/* Lightning Flash Effect on Transition */}
+                {isTransitioning && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 0.1, 0] }}
+                    transition={{ duration: 0.5, times: [0, 0.1, 1] }}
+                    className="absolute inset-0 bg-primary/30 z-10"
+                  />
+                )}
 
                 {/* Image Indicators */}
-                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-30">
                   {images.map((_, index) => (
                     <button
                       key={index}
-                      onClick={() => {
-                        setIsAnimating(true)
-                        setTimeout(() => {
-                          setCurrentImageIndex(index)
-                          setIsAnimating(false)
-                        }, 500)
-                      }}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        index === currentImageIndex ? "bg-primary w-6" : "bg-white/50"
+                      onClick={() => handleIndicatorClick(index)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        index === currentImageIndex
+                          ? "bg-primary w-6"
+                          : index === nextImageIndex && isTransitioning
+                            ? "bg-primary/70 w-4"
+                            : "bg-white/50 w-2"
                       }`}
                       aria-label={`View image ${index + 1}`}
+                      disabled={isTransitioning}
                     />
                   ))}
                 </div>

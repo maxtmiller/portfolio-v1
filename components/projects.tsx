@@ -34,7 +34,7 @@ const projects = [
     image: "/spotsense_cover.png?height=300&width=500",
     tags: ["Flask", "Tensorflow", "Pillow"],
     github: "https://github.com/maxtmiller/Spot-Sense",
-    demo: "#",
+    demo: "https://spot-sense.vercel.app/",
   },
   {
     title: "AI Vault",

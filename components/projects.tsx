@@ -57,7 +57,7 @@ const projects = [
   {
     title: "Uniply",
     description:
-      "A platform for practicing foreign languages speaking skills through conversations and advice from an AI.",
+      "An iOS app to help students apply to universities and provide lots of resources for specific courses.",
     image: "/uniply_cover.png?height=300&width=200",
     tags: ["SwiftUI", "XCode", "Figma"],
     github: "https://github.com/maxtmiller/Uniply",

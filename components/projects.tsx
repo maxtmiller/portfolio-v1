@@ -10,6 +10,15 @@ import { Badge } from "@/components/ui/badge"
 
 const projects = [
   {
+    title: "CS2Vault",
+    description:
+      "An iOS app to help students apply to universities and provide lots of resources for specific courses.",
+    image: "/cs2vault_cover.png?height=300&width=200",
+    tags: ["Typescript", "Nextjs", "Globaloffensive"],
+    github: "https://github.com/maxtmiller/CS2-Vault",
+    demo: "https://cs2vault.vercel.app/",
+  },
+  {
     title: "Nourish Net",
     description:
       "A platform that connects businesses and food banks, making food donations seamless and rewarding.",
@@ -45,15 +54,15 @@ const projects = [
     github: "https://github.com/maxtmiller/AI-Vault",
     demo: "https://youtu.be/-ajjSLZld-E",
   },
-  {
-    title: "Fluent Flow",
-    description:
-      "A platform for practicing foreign languages speaking skills through conversations and advice from an AI.",
-    image: "/fluentflow_cover.png?height=300&width=500",
-    tags: ["Flask", "OpenAI", "FFmpeg"],
-    github: "https://github.com/maxtmiller/Fluent-Flow",
-    demo: "https://youtu.be/6mJzdJuDNfQ",
-  },
+  // {
+  //   title: "Fluent Flow",
+  //   description:
+  //     "A platform for practicing foreign languages speaking skills through conversations and advice from an AI.",
+  //   image: "/fluentflow_cover.png?height=300&width=500",
+  //   tags: ["Flask", "OpenAI", "FFmpeg"],
+  //   github: "https://github.com/maxtmiller/Fluent-Flow",
+  //   demo: "https://youtu.be/6mJzdJuDNfQ",
+  // },
   {
     title: "Uniply",
     description:

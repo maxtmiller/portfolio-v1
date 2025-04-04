@@ -14,7 +14,7 @@ const projects = [
     description:
       "Effortlessly view all your CS2 items, and discover the best suggestions for your collection.",
     image: "/cs2vault_cover.png?height=300&width=200",
-    tags: ["Typescript", "Nextjs", "Globaloffensive"],
+    tags: ["Typescript", "Next.js", "Globaloffensive"],
     github: "https://github.com/maxtmiller/CS2-Vault",
     demo: "https://cs2vault.vercel.app/",
   },

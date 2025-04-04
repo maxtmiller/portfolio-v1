@@ -12,7 +12,7 @@ const projects = [
   {
     title: "CS2Vault",
     description:
-      "An iOS app to help students apply to universities and provide lots of resources for specific courses.",
+      "Effortlessly view all your CS2 items, and discover the best suggestions for your collection.",
     image: "/cs2vault_cover.png?height=300&width=200",
     tags: ["Typescript", "Nextjs", "Globaloffensive"],
     github: "https://github.com/maxtmiller/CS2-Vault",

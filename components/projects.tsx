@@ -144,19 +144,17 @@ export default function Projects() {
                 </CardContent>
 
                 <CardFooter className="flex justify-between">
-                  {project.title !== "CS2Vault" && (
-                    <Button variant="ghost" size="sm" asChild>
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary"
-                      >
-                        <Github className="h-4 w-4 mr-2" />
-                        GitHub
-                      </a>
-                    </Button>
-                  )}
+                  <Button variant="ghost" size="sm" asChild  disabled={project.title !== "CS2Vault"}>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary"
+                    >
+                      <Github className="h-4 w-4 mr-2" />
+                      GitHub
+                    </a>
+                  </Button>
 
                   <Button variant="ghost" size="sm" asChild>
                     <a

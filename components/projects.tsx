@@ -14,7 +14,7 @@ const projects = [
     description:
       "Effortlessly view all your CS2 items, and discover the best suggestions for your collection.",
     image: "/cs2vault_cover.png?height=300&width=200",
-    tags: ["Typescript", "Next.js", "Globaloffensive"],
+    tags: ["Typescript", "Next.js", "GeminiAPI"],
     github: "https://github.com/maxtmiller/CS2-Vault",
     demo: "https://cs2vault.vercel.app/",
   },
@@ -144,17 +144,19 @@ export default function Projects() {
                 </CardContent>
 
                 <CardFooter className="flex justify-between">
-                  <Button variant="ghost" size="sm" asChild>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary"
-                    >
-                      <Github className="h-4 w-4 mr-2" />
-                      GitHub
-                    </a>
-                  </Button>
+                  {project.title !== "CS2Vault" && (
+                    <Button variant="ghost" size="sm" asChild>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary"
+                      >
+                        <Github className="h-4 w-4 mr-2" />
+                        GitHub
+                      </a>
+                    </Button>
+                  )}
 
                   <Button variant="ghost" size="sm" asChild>
                     <a

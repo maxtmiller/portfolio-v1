@@ -33,7 +33,7 @@ export default function Hero() {
               <span>I&apos;m a </span>
               {mounted && (
                 <TypeAnimation
-                  sequence={["Student", 1500, "Developer", 1500, "Math Enthuasiast", 1500, "Geoguessr Nerd", 1500, "Skier", 1500, "World Traveler", 1500]}
+                  sequence={["Student", 1500, "Software Developer", 1500, "Math Enthusiast", 1500, "GeoGuessr Nerd", 1500, "Skier", 1500, "World Traveler", 1500]}
                   wrapper="span"
                   speed={50}
                   className="text-primary font-medium"

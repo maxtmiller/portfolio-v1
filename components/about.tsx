@@ -86,10 +86,10 @@ export default function About() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  I&apos;m a passionate backend developer and student with a keen interest in emerging technologies, especially LLMs and AI agents.
+                  I&apos;m a passionate fullstack developer and math student with a keen interest in emerging technologies, especially LLMs and AI agents.
                 </p>
                 <p className="text-muted-foreground">
-                  When I&apos;m not coding, you can find me hiking, skiing, learning about geography, playing table tennis or reading biographies, especially from Walter Isaacson.
+                  When I&apos;m not coding, you can find me hiking, skiing, learning about geography, playing table tennis or reading biographies - especially Walter Isaacson's.
                 </p>
               </CardContent>
             </Card>
@@ -116,7 +116,7 @@ export default function About() {
                   <div>
                     <h4 className="font-semibold">University of Waterloo</h4>
                     <p className="text-sm text-muted-foreground">Bachelor&apos;s of Mathematics</p>
-                    <p className="text-sm text-muted-foreground">2024 - Present</p>
+                    <p className="text-sm text-muted-foreground">Sep 2024 - Present</p>
                   </div>
                 </div>
                 </div>
@@ -131,8 +131,8 @@ export default function About() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-3 gap-4">
-                  {["JavaScript", "Node.js", "MongoDB", "Python", "Flask", "Firebase"].map((skill) => (
+                <div className="grid grid-cols-4 gap-4">
+                  {["Typescript", "React", "Node.js", "MongoDB", "Python", "Bootstrap", "FastAPI", "Firebase"].map((skill) => (
                     <div key={skill} className="flex items-center">
                       <div className="h-2 w-2 rounded-full bg-primary mr-2"></div>
                       <span>{skill}</span>

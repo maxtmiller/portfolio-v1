@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Briefcase, Calendar, MapPin } from "lucide-react"
 import Image from "next/image"
+import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 
 const experiences = [
@@ -16,6 +17,20 @@ const experiences = [
       "Implemented offline data storage and excel export functionality with PostgreSQL",
     ],
     image: "/artemed_logo.png?height=80&width=80",
+    tags: ["Javascript", "Electron", "PostgreSQL"]
+  },
+  {
+    title: "Software Engineer Intern",
+    company: "JENLY.AI",
+    location: "Remote",
+    period: "May 2025 - Aug 2025",
+    description: [
+      "Built a Microsoft Word Add-in with an integrated RAG pipeline to generate regulatory documentation",
+      "Integrated RAG methods into application, enabling source traceability, content quality reports, and an AI chat",
+      "Automated scalable cloud deployment using Azure Bicep and Azure App Service for hosting",
+    ],
+    image: "/jenly_logo.png?height=80&width=80",
+    tags: ["Typescript", "React", "MSFT Office APIs"]
   },
   {
     title: "Student Work Experience",
@@ -23,10 +38,11 @@ const experiences = [
     location: "Munich, DE",
     period: "Jun 2022 - Jul 2022",
     description: [
-      "Developed a game recommendation system with Steam Web APIs, and Node.js",
-      "Led a team of four students and presented work to Google host team",
+      "Developed a game-recommendation system using Steam APIs to analyze user data and deliver suggestions",
+      "Led a team of four students in project development and presented results to Google host team",
     ],
     image: "/google_logo.png?height=80&width=80",
+    tags: ["Javascript", "Node.js", "Express"]
   },
 ]
 
@@ -67,7 +83,13 @@ export default function Experience() {
                 {/* Timeline dot */}
                 <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-primary shadow-lg shadow-primary/50 z-10 hidden md:block"></div>
 
-                <div className="w-full md:w-1/2 md:pr-12 md:text-right">
+                <div 
+                  className={`w-full md:w-1/2 ${
+                    index % 2 === 0 
+                      ? "md:pr-12 md:text-right"
+                      : "md:pl-12 md:text-right"
+                  }`}
+                >
                   <div className="bg-gray-800/50 backdrop-blur rounded-xl shadow-lg overflow-hidden border border-gray-700/50 hover:border-primary/30 transition-all duration-300">
                     <div className="p-6 flex flex-col md:flex-row gap-6">
                       {/* Logo Section - Always positioned towards the inside (timeline) */}
@@ -135,6 +157,14 @@ export default function Experience() {
                             </li>
                           ))}
                         </ul>
+
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {exp.tags.map((tag, i) => (
+                            <Badge key={i} variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>

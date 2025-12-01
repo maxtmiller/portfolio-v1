@@ -10,6 +10,15 @@ import { Badge } from "@/components/ui/badge"
 
 const projects = [
   {
+    title: "Alpha Poisson",
+    description:
+      "Battle against our self-trained AI chess engines, crafted by the Échec et mat du poisson team.",
+    image: "/alphapoisson_cover.png?height=300&width=200",
+    tags: ["Python", "FastAPI", "Pytorch"],
+    github: "https://github.com/maxtmiller/AlphaPoisson",
+    demo: "https://youtu.be/RKm9mFOF43c",
+  },
+  {
     title: "CS2Vault",
     description:
       "Effortlessly view all your CS2 items, and discover the best suggestions for your collection.",
@@ -27,15 +36,15 @@ const projects = [
     github: "https://github.com/maxtmiller/NourishNet",
     demo: "https://nourishnet-0zj7.onrender.com/",
   },
-  {
-    title: "Crypto Companion",
-    description:
-      "A platform to help beginners navigate the crypto market through curated insights, visualization, and advice.",
-    image: "/crpytocompanion_cover.png?height=300&width=500",
-    tags: ["Node.js", "React", "CohereAPI"],
-    github: "https://github.com/maxtmiller/Crypto-Companion",
-    demo: "https://crypto-companion-three.vercel.app/",
-  },
+  // {
+  //   title: "Crypto Companion",
+  //   description:
+  //     "A platform to help beginners navigate the crypto market through curated insights, visualization, and advice.",
+  //   image: "/crpytocompanion_cover.png?height=300&width=500",
+  //   tags: ["Node.js", "React", "CohereAPI"],
+  //   github: "https://github.com/maxtmiller/Crypto-Companion",
+  //   demo: "https://docs.google.com/presentation/d/1s3Jvc-tMe_mKoeNIx4vLR4nFVV9ai6ImpJ2PK3JK07Q/edit?usp=sharing",
+  // },
   {
     title: "Spot Sense",
     description:
@@ -164,7 +173,7 @@ export default function Projects() {
                       className="text-muted-foreground hover:text-primary group"
                     >
                       <span>
-                        {project.title === "Uniply" || project.title === "AI Vault" || project.title === "Fluent Flow" || project.title === "Spot Sense" ? "View Demo" : "View Project"}
+                        {project.title === "Uniply" || project.title === "AI Vault" || project.title === "Fluent Flow" || project.title === "Spot Sense" || project.title === "Alpha Poisson" ? "View Demo" : "View Project"}
                       </span>
                       <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </a>

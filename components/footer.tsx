@@ -78,9 +78,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-border/50 text-center text-sm text-muted-foreground">
+        {/* <div className="mt-12 pt-6 border-t border-border/50 text-center text-sm text-muted-foreground">
           <p>&copy; {currentYear} Maximilian Miller. All rights reserved.</p>
-        </div>
+        </div> */}
       </div>
     </footer>
   )

@@ -34,7 +34,7 @@ const projects = [
     image: "/nourishnet_cover.png?height=300&width=500",
     tags: ["Flask", "MongoDB", "Socket.IO"],
     github: "https://github.com/maxtmiller/NourishNet",
-    demo: "https://nourishnet-0zj7.onrender.com/",
+    demo: "https://nourishnet-ciue.onrender.com/",
   },
   // {
   //   title: "Crypto Companion",

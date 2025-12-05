@@ -10,6 +10,15 @@ import { Badge } from "@/components/ui/badge"
 
 const projects = [
   {
+    title: "Biquadris",
+    description:
+      "A modern two-player reimagining of Tetris, built with custom level logic, and bonus game mechanics.",
+    image: "/biquadris_cover.png?height=300&width=200",
+    tags: ["C++", "Xwindow", "Linux"],
+    github: "https://github.com/maxtmiller/Biquadris",
+    demo: "https://youtu.be/h6Qt5QrLf50",
+  },
+  {
     title: "Alpha Poisson",
     description:
       "Battle against our self-trained AI chess engines, crafted by the Échec et mat du poisson team.",
@@ -23,7 +32,7 @@ const projects = [
     description:
       "Effortlessly view all your CS2 items, and discover the best suggestions for your collection.",
     image: "/cs2vault_cover.png?height=300&width=200",
-    tags: ["Typescript", "Next.js", "GeminiAPI"],
+    tags: ["Typescript", "React", "Next.js"],
     github: "https://github.com/maxtmiller/CS2-Vault",
     demo: "https://cs2vault.vercel.app/",
   },
@@ -32,7 +41,7 @@ const projects = [
     description:
       "A platform that connects businesses and food banks, making food donations seamless and rewarding.",
     image: "/nourishnet_cover.png?height=300&width=500",
-    tags: ["Flask", "MongoDB", "Socket.IO"],
+    tags: ["Python", "MongoDB", "Socket.IO"],
     github: "https://github.com/maxtmiller/NourishNet",
     demo: "https://nourishnet-ciue.onrender.com/",
   },
@@ -50,19 +59,19 @@ const projects = [
     description:
       "A user-friendly web app that simplifies skin cancer detection through real-time detection, and instant advice.",
     image: "/spotsense_cover.png?height=300&width=500",
-    tags: ["Flask", "Tensorflow", "Firebase"],
+    tags: ["Python", "Tensorflow", "Firebase"],
     github: "https://github.com/maxtmiller/Spot-Sense",
     demo: "https://youtu.be/dvp7egOsSl4",
   },
-  {
-    title: "AI Vault",
-    description:
-      "A platform where developers can share AI models, simplifying the discovery and integration of AI solutions.",
-    image: "/aivault_cover.png?height=300&width=500",
-    tags: ["Node.js", "MongoDB", "Auth0"],
-    github: "https://github.com/maxtmiller/AI-Vault",
-    demo: "https://youtu.be/-ajjSLZld-E",
-  },
+  // {
+  //   title: "AI Vault",
+  //   description:
+  //     "A platform where developers can share AI models, simplifying the discovery and integration of AI solutions.",
+  //   image: "/aivault_cover.png?height=300&width=500",
+  //   tags: ["Javascript", "Node.js", "MongoDB", "Auth0"],
+  //   github: "https://github.com/maxtmiller/AI-Vault",
+  //   demo: "https://youtu.be/-ajjSLZld-E",
+  // },
   // {
   //   title: "Fluent Flow",
   //   description:
@@ -81,7 +90,7 @@ const projects = [
     github: "https://github.com/maxtmiller/Uniply",
     demo: "https://youtu.be/sO30QM-T47c",
   },
-]
+];
 
 export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -173,7 +182,7 @@ export default function Projects() {
                       className="text-muted-foreground hover:text-primary group"
                     >
                       <span>
-                        {project.title === "Uniply" || project.title === "AI Vault" || project.title === "Fluent Flow" || project.title === "Spot Sense" || project.title === "Alpha Poisson" ? "View Demo" : "View Project"}
+                        {project.title === "Uniply" || project.title === "AI Vault" || project.title === "Fluent Flow" || project.title === "Spot Sense" || project.title === "Alpha Poisson" || project.title === "Biquadris" ? "View Demo" : "View Project"}
                       </span>
                       <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </a>

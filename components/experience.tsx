@@ -8,18 +8,6 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const experiences = [
   {
-    title: "Software Engineer Volunteer",
-    company: "ArteMed Stiftung",
-    location: "Remote",
-    period: "Sep 2023 - Present",
-    description: [
-      "Build a Electron Windows App to streamline patient data management and monitor illness outbreaks",
-      "Implemented offline data storage and excel export functionality with PostgreSQL",
-    ],
-    image: "/artemed_logo.png?height=80&width=80",
-    tags: ["Javascript", "Electron", "PostgreSQL"]
-  },
-  {
     title: "Software Engineer Intern",
     company: "JENLY.AI",
     location: "Remote",
@@ -31,6 +19,18 @@ const experiences = [
     ],
     image: "/jenly_logo.png?height=80&width=80",
     tags: ["Typescript", "React", "MSFT Office APIs"]
+  },
+  {
+    title: "Software Engineer Volunteer",
+    company: "ArteMed Stiftung",
+    location: "Remote",
+    period: "Sep 2023 - Apr 2025",
+    description: [
+      "Build a Electron Windows App to streamline patient data management and monitor illness outbreaks",
+      "Implemented offline data storage and excel export functionality with PostgreSQL",
+    ],
+    image: "/artemed_logo.png?height=80&width=80",
+    tags: ["Javascript", "Electron", "PostgreSQL"]
   },
   {
     title: "Student Work Experience",

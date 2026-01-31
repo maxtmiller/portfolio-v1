@@ -11,19 +11,7 @@ export const metadata: Metadata = {
   title: "Maximilian Miller",
   description: "Personal portfolio of Maximilian Miller",
   icons: {
-    icon: [
-      { url: "/logo.jpg" },
-      { url: "/logo.jpg", sizes: "16x16", type: "image/jpg" },
-      { url: "/logo.jpg", sizes: "32x32", type: "image/jpg" },
-    ],
-    apple: [{ url: "/logo.jpg", sizes: "180x180", type: "image/jpg" }],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/logo.jpg",
-        color: "#9333EA",
-      },
-    ],
+    icon: "/favicon.ico",
   },
 }
 

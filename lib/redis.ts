@@ -11,12 +11,10 @@ export const redisClient = globalForRedis.redisClient || createClient({
     }
 });
 
-// Sync with the global object using the same key
 if (process.env.NODE_ENV !== 'production') globalForRedis.redisClient = redisClient;
 
 redisClient.on('error', err => console.error('Redis Client Error:', err));
 
-// Immediate IIFE for connection
 (async () => {
     if (!redisClient.isOpen) {
         await redisClient.connect();

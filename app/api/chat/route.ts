@@ -9,7 +9,7 @@ import { RunnableSequence, RunnableConfig, RunnableBranch, RunnableLambda, Runna
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { getQueryDecomposition, getQueryStepBackContext, getQueryDecompositionFast } from "./queryTranslations";
 import { SearchReply } from 'redis';
-import { redisClient } from '@/lib/redis';
+import { redisClient } from '../../../lib/redis';
 
 export const runtime = "nodejs";
 export const maxDuration = 60;

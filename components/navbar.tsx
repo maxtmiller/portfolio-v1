@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between h-20">
           <Link href="#home" className="text-2xl md:text-3xl font-bold text-primary relative group flex items-center">
-            <Zap className="h-7 w-7 mr-2 text-primary" />
+            {/* <Zap className="h-7 w-7 mr-2 text-primary" /> */}
             <span className="relative z-10">Max Miller</span>
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
           </Link>

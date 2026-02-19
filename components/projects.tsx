@@ -1,12 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { ArrowRight, Github } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { ArrowRight, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
@@ -50,7 +57,7 @@ const projects = [
   //   description:
   //     "A platform to help beginners navigate the crypto market through curated insights, visualization, and advice.",
   //   image: "/crpytocompanion_cover.png?height=300&width=500",
-  //   tags: ["Node.js", "React", "CohereAPI"],
+  //   tags: ["Node.js", "React", "CohereAPI"], // Express.js, MongoDB
   //   github: "https://github.com/maxtmiller/Crypto-Companion",
   //   demo: "https://docs.google.com/presentation/d/1s3Jvc-tMe_mKoeNIx4vLR4nFVV9ai6ImpJ2PK3JK07Q/edit?usp=sharing",
   // },
@@ -68,7 +75,7 @@ const projects = [
   //   description:
   //     "A platform where developers can share AI models, simplifying the discovery and integration of AI solutions.",
   //   image: "/aivault_cover.png?height=300&width=500",
-  //   tags: ["Javascript", "Node.js", "MongoDB", "Auth0"],
+  //   tags: ["Node.js", "MongoDB", "Auth0"], // Express.js
   //   github: "https://github.com/maxtmiller/AI-Vault",
   //   demo: "https://youtu.be/-ajjSLZld-E",
   // },
@@ -80,6 +87,15 @@ const projects = [
   //   tags: ["Flask", "OpenAI", "FFmpeg"],
   //   github: "https://github.com/maxtmiller/Fluent-Flow",
   //   demo: "https://youtu.be/6mJzdJuDNfQ",
+  // },
+  // {
+  //   title: "Common Track",
+  //   description:
+  //     "A web app that helps students research colleges on the Common App with rankings, deadlines, test policies, and more.",
+  //   image: "/commontrack_cover.png?height=300&width=500",
+  //   tags: ["Python", "Flask", "SQLite"],
+  //   github: "https://github.com/maxtmiller/Common-Track",
+  //   demo: "https://youtu.be/-VAMW14fxy8",
   // },
   {
     title: "Uniply",
@@ -93,7 +109,7 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden">
@@ -147,10 +163,16 @@ export default function Projects() {
                 </div>
 
                 <CardHeader>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                    {project.title}
+                  </CardTitle>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {project.tags.map((tag, i) => (
-                      <Badge key={i} variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20">
+                      <Badge
+                        key={i}
+                        variant="secondary"
+                        className="bg-primary/10 text-primary hover:bg-primary/20"
+                      >
                         {tag}
                       </Badge>
                     ))}
@@ -158,11 +180,18 @@ export default function Projects() {
                 </CardHeader>
 
                 <CardContent>
-                  <CardDescription className="text-muted-foreground">{project.description}</CardDescription>
+                  <CardDescription className="text-muted-foreground">
+                    {project.description}
+                  </CardDescription>
                 </CardContent>
 
                 <CardFooter className="flex justify-between">
-                  <Button variant="ghost" size="sm" asChild  disabled={project.title !== "CS2Vault"}>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    asChild
+                    disabled={project.title !== "CS2Vault"}
+                  >
                     <a
                       href={project.github}
                       target="_blank"
@@ -182,7 +211,13 @@ export default function Projects() {
                       className="text-muted-foreground hover:text-primary group"
                     >
                       <span>
-                        {project.title === "Uniply" || project.title === "AI Vault" || project.title === "Fluent Flow" || project.title === "Spot Sense" || project.title === "Biquadris" ? "View Demo" : "View Project"}
+                        {project.title === "Uniply" ||
+                        project.title === "AI Vault" ||
+                        project.title === "Fluent Flow" ||
+                        project.title === "Spot Sense" ||
+                        project.title === "Biquadris"
+                          ? "View Demo"
+                          : "View Project"}
                       </span>
                       <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </a>
@@ -194,6 +229,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

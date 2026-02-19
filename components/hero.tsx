@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { TypeAnimation } from "react-type-animation"
 import Image from "next/image"
-import { ArrowDown } from "lucide-react"
+import { ArrowDown, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function Hero() {
@@ -54,8 +54,16 @@ export default function Hero() {
                   <ArrowDown className="ml-2 h-4 w-4 group-hover:animate-bounce" />
                 </Button>
               </a>
+              <a href="https://maxtmiller.github.io/resume" target="_blank" rel="noreferrer">
+                <Button variant="outline">
+                  View Resume
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
               <a href="#contact">
-                <Button variant="outline">Contact Me</Button>
+                <Button variant="ghost">
+                  Contact Me
+                </Button>
               </a>
             </div>
           </div>

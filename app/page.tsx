@@ -4,6 +4,7 @@ import About from "@/components/about"
 import Experience from "@/components/experience"
 import Projects from "@/components/projects"
 import Footer from "@/components/footer"
+import Chatbox from "@/components/chat"
 import LightningEffect from "@/components/lightning-effect"
 
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Projects />
       </main>
       <Footer />
+      <Chatbox />
     </div>
   )
 }

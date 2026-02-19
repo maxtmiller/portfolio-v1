@@ -44,6 +44,9 @@
     "@radix-ui/react-toggle-group": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.6",
     "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^22.19.11",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19",
     "@vercel/analytics": "^1.5.0",
     "autoprefixer": "^10.4.24",
     "class-variance-authority": "^0.7.1",
@@ -71,17 +74,16 @@
     "recharts": "2.15.0",
     "redis": "^5.11.0",
     "sonner": "^1.7.1",
-    "tailwindcss": "^3.4.19",
     "tailwind-merge": "^2.5.5",
+    "tailwindcss": "^3.4.19",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.6",
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@types/node": "^22",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.24",
     "baseline-browser-mapping": "^2.9.19",
-    "typescript": "^5"
+    "postcss": "^8.5.6",
+    "typescript": "^5.9.3"
   }
 }

@@ -106,7 +106,7 @@ export default function About() {
                 <div className="border-l-2 border-primary/50 pl-4 py-2 flex items-center space-x-4">
                   <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                     <Image
-                      src={"/waterloo_logo.png?height=80&width=80" || "/placeholder.svg"}
+                      src={"/waterloo_logo.png?height=80&width=80"}
                       alt={"Waterloo"}
                       fill
                       className="object-cover"

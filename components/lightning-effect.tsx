@@ -35,10 +35,10 @@ export default function LightningEffect() {
       age: number
 
       constructor() {
-        this.x = Math.random() * canvas.width
+        this.x = Math.random() * canvas!.width
         this.y = 0
         this.xEnd = this.x + (Math.random() * 300 - 150)
-        this.yEnd = canvas.height * (0.3 + Math.random() * 0.4)
+        this.yEnd = canvas!.height * (0.3 + Math.random() * 0.4)
         this.width = 1 + Math.random() * 3
         this.opacity = 0.6 + Math.random() * 0.4
         this.color = `rgba(138, 43, 226, ${this.opacity})`

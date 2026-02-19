@@ -14,7 +14,7 @@ import { redisClient } from '../../../lib/redis';
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
-export async function getCachedAnswer(question: string, embeddings: OpenAIEmbeddings) {
+async function getCachedAnswer(question: string, embeddings: OpenAIEmbeddings) {
     // Turn the question into a vector
     const vector = await embeddings.embedQuery(question);
     const buffer = Buffer.from(new Float32Array(vector).buffer);

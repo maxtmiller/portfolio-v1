@@ -15,12 +15,15 @@ if (process.env.NODE_ENV !== 'production') globalForRedis.redisClient = redisCli
 
 redisClient.on('error', err => console.error('Redis Client Error:', err));
 
-(async () => {
-    if (!redisClient.isOpen) {
-        await redisClient.connect();
-        console.log('Successfully connected to Redis Cloud');
-    }
-})().catch(console.error);
+// Only connect to Redis at runtime, not during build
+if (typeof window === 'undefined' && process.env.NODE_ENV === 'production') {
+    (async () => {
+        if (!redisClient.isOpen) {
+            await redisClient.connect();
+            console.log('Successfully connected to Redis Cloud');
+        }
+    })().catch(console.error);
+}
 
 
 // async function setupCacheIndex() {

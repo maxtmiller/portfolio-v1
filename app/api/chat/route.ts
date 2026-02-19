@@ -9,9 +9,7 @@ import { RunnableSequence, RunnableConfig, RunnableBranch, RunnableLambda, Runna
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { getQueryDecomposition, getQueryStepBackContext, getQueryDecompositionFast } from "./queryTranslations";
 import { SearchReply } from 'redis';
-// import { redisClient } from '@/lib/redis';
-import { createClient } from 'redis';
-
+import { redisClient } from '@/lib/redis';
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -64,26 +62,6 @@ export async function getCachedAnswer(question: string, embeddings: OpenAIEmbedd
 //     });
 // }
 
-
-// const globalForRedis = global as unknown as { redisClient: ReturnType<typeof createClient> };
-
-export const redisClient = createClient({
-    password: process.env.REDIS_PASSWORD,
-    socket: {
-        host: process.env.REDIS_ENDPOINT,
-        port: Number(process.env.REDIS_PORT) || 6379,
-        family: 4 
-    }
-});
-
-redisClient.on('error', err => console.error('Redis Client Error:', err));
-
-(async () => {
-    if (!redisClient.isOpen) {
-        await redisClient.connect();
-        console.log('Successfully connected to Redis Cloud');
-    }
-})().catch(console.error);
 
 
 const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! });

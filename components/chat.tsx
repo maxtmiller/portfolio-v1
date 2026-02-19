@@ -191,7 +191,7 @@ export default function Chatbox() {
         if (isOpen && messages.length === 0) {
             const greeting = {
                 role: "assistant",
-                content: "hey, i'm proxy ai, think of me Max's brain in bot form. Ask me anything about his projects, experience, or skills—or just type / for some quick shortcuts!",
+                content: "hey, i'm proxy ai, an interactive instance of Max's experiences. Ask me anything about his projects, experience, or skills—or just type / for some quick shortcuts!",
             };
             setMessages([greeting]);
         }

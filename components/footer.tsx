@@ -48,7 +48,7 @@ export default function Footer() {
                 <Mail className="h-6 w-6" />
               </Link>
               <Link
-                href="https://maxtmiller.github.io/"
+                href="https://maxtmiller.github.io/resume/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"

@@ -40,5 +40,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/api/chat', '/api/trace', '/api/suggestion'],
+  matcher: ['/api/chat', '/api/suggestion'],
 }

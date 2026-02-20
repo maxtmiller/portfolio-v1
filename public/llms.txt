@@ -1,0 +1,21 @@
+# Maximilian Miller - Portfolio Summary
+
+## Profile
+Brief summary: AI-focused Backend Engineer specializing in the design and deployment of scalable distributed systems and LLM-integrated applications.
+Location: Waterloo, ON, Canada
+Availability: Open to full-time internships roles
+
+## Key Skills
+- Core Tech: Python, JavaScript, C++, Swift, Node.js, Flask, FastAPI, Express, Electron, React.js, MongoDB, PostgreSQL, VS Code, Git, Figma, Jupyter Notebook, Postman, Azure
+- Specializations: Generative AI, RAG, NLP, Data Engineering,
+
+## Notable Projects
+- Alpha Poisson: Battle against our self-trained AI chess engines, crafted by the Échec et mat du poisson team. Stack: Python, FastAPI, Pytorch. URL: https://alpha-poisson.vercel.app/
+- CS2Vault: Effortlessly view all your CS2 items, and discover the best suggestions for your collection. Stack: Typescript, React, Next.js, TailwindCSS, CohereAPI. URL: https://cs2vault.vercel.app/
+
+## Contact & Socials
+- Website: https://www.maxtmiller.dev
+- GitHub: https://www.github.com/maxtmiller
+- LinkedIn: https://www.linkedin.com/in/maximiliantmiller
+- Blog: https://www.maxtmiller.github.io
+- Email: mtmlr101@gmail.com

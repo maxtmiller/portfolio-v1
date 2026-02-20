@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Specifically inviting AI bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.maxtmiller.dev/sitemap.xml

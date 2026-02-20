@@ -9,7 +9,7 @@ import { RunnableSequence, RunnableConfig, RunnableBranch, RunnableLambda, Runna
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { getQueryDecomposition, getQueryStepBackContext, getQueryDecompositionFast } from "./queryTranslations";
 import { SearchReply } from 'redis';
-import { redisClient } from '../../../lib/redis';
+import { redisClient } from '@/lib/redis';
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -61,7 +61,6 @@ async function getCachedAnswer(question: string, embeddings: OpenAIEmbeddings) {
 //         cached_answer: answer,
 //     });
 // }
-
 
 
 const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! });

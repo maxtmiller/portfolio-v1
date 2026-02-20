@@ -6,8 +6,6 @@ import {
     FileText, Database, GitBranch, ArrowRight, ChevronDown, ExternalLink, FileSearch, Settings, Save, RotateCcw, 
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import { loadComponents } from "next/dist/server/load-components";
-import { set } from "date-fns";
 
 // Add custom scrollbar hiding styles
 const scrollbarHideStyles = `

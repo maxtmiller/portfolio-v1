@@ -8,6 +8,7 @@ import { StringOutputParser } from "@langchain/core/output_parsers";
 import { RunnableSequence, RunnableConfig, RunnableBranch, RunnableLambda, RunnablePassthrough } from "@langchain/core/runnables";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { getQueryDecomposition, getQueryStepBackContext, getQueryDecompositionFast } from "./queryTranslations";
+import { awaitAllCallbacks } from "@langchain/core/callbacks/promises";
 import { SearchReply } from 'redis';
 import { redisClient } from '@/lib/redis';
 import { Client } from "langsmith";
@@ -84,7 +85,7 @@ export async function POST(req: NextRequest) {
         const { question, messages, ragSettings } = await req.json();
         const { temperature, retrievalK, maxToken } = ragSettings;
 
-        const formattedMessages = messages.slice(1).slice(-3);        
+        const formattedMessages = messages.slice(1).slice(-3);
 
         const retriever = vectorStore.asRetriever({
             k: retrievalK || 6,
@@ -346,5 +347,7 @@ export async function POST(req: NextRequest) {
             { error: "Something went wrong. Make sure your Pinecone index is active." },
             { status: 500 }
         );
+    } finally {
+        await awaitAllCallbacks();
     }
 }

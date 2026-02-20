@@ -10,6 +10,7 @@ import { OpenAIEmbeddings } from "@langchain/openai";
 import { getQueryDecomposition, getQueryStepBackContext, getQueryDecompositionFast } from "./queryTranslations";
 import { SearchReply } from 'redis';
 import { redisClient } from '@/lib/redis';
+import { Client } from "langsmith";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -62,6 +63,8 @@ async function getCachedAnswer(question: string, embeddings: OpenAIEmbeddings) {
 //     });
 // }
 
+
+const lsClient = new Client();
 
 const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! });
 const index = pc.Index({ name: "portfolio" });
@@ -327,6 +330,8 @@ export async function POST(req: NextRequest) {
         // }
         // await saveToCache(question, response, embeddings);
 
+        await lsClient.awaitPendingTraceBatches();
+
         return NextResponse.json({ 
             answer: response,
             runId: collectedRunId,
@@ -334,6 +339,8 @@ export async function POST(req: NextRequest) {
 
     } catch (error: any) {
         console.error("Error in RAG route:", error);
+
+        await lsClient.awaitPendingTraceBatches().catch(() => {});
 
         return NextResponse.json(
             { error: "Something went wrong. Make sure your Pinecone index is active." },

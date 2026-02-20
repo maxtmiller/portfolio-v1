@@ -70,6 +70,7 @@ export async function GET(req: NextRequest) {
 
         let publicUrl = null;
         if (enableTracing && runId) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
             for (let attempt = 1; attempt <= 3; attempt++) {
                 try {
                     const traceData = await smithClient.readRun(runId, { 

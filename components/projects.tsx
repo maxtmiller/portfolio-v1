@@ -17,10 +17,27 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
+    title: "Pin Sieve",
+    description:
+      "AI-powered Chrome extension that analyzes Pinterest boards to generate highly personalized gift ideas.",
+    image: {
+      src: "/pinsieve_cover.png",
+      zoom: "scale-100",
+      gap: false,
+    },
+    tags: ["Javascript", "Knowledge Graph", "IndexDB"],
+    github: "https://github.com/maxtmiller/pinsieve-chrome-extension",
+    demo: "https://pin-sieve.vercel.app/",
+  },
+  {
     title: "Biquadris",
     description:
       "A modern two-player reimagining of Tetris, built with custom level logic, and bonus game mechanics.",
-    image: "/biquadris_cover.png?height=300&width=200",
+    image: {
+      src: "/biquadris_cover.png",
+      zoom: "scale-[1.15]",
+      gap: true,
+    },
     tags: ["C++", "Xwindow", "Linux"],
     github: "https://github.com/maxtmiller/Biquadris",
     demo: "https://youtu.be/h6Qt5QrLf50",
@@ -29,16 +46,23 @@ const projects = [
     title: "Alpha Poisson",
     description:
       "Battle against our self-trained AI chess engines, crafted by the Échec et mat du poisson team.",
-    image: "/alphapoisson_cover.png?height=300&width=200",
+    image: {
+      src: "/alphapoisson_cover.png",
+      zoom: "scale-[1.15]",
+      gap: false,
+    },
     tags: ["Python", "FastAPI", "Pytorch"],
     github: "https://github.com/maxtmiller/AlphaPoisson",
     demo: "https://alpha-poisson.vercel.app/",
   },
   {
-    title: "CS2Vault",
-    description:
-      "Effortlessly view all your CS2 items, and discover the best suggestions for your collection.",
-    image: "/cs2vault_cover.png?height=300&width=200",
+    title: "CS2 Vault",
+    description: "Effortlessly view all your CS2 items, and discover the best suggestions for your collection.",
+    image: {
+      src: "/cs2vault_cover.png",
+      zoom: "scale-[1.6]",
+      gap: false,
+    },
     tags: ["Typescript", "React", "Next.js"],
     github: "https://github.com/maxtmiller/CS2-Vault",
     demo: "https://cs2vault.vercel.app/",
@@ -47,7 +71,11 @@ const projects = [
     title: "Nourish Net",
     description:
       "A platform that connects businesses and food banks, making food donations seamless and rewarding.",
-    image: "/nourishnet_cover.png?height=300&width=500",
+    image: {
+      src: "/nourishnet_cover.png",
+      zoom: "scale-[1]",
+      gap: false,
+    },
     tags: ["Python", "MongoDB", "Socket.IO"],
     github: "https://github.com/maxtmiller/NourishNet",
     demo: "https://nourishnet-ciue.onrender.com/",
@@ -61,15 +89,15 @@ const projects = [
   //   github: "https://github.com/maxtmiller/Crypto-Companion",
   //   demo: "https://docs.google.com/presentation/d/1s3Jvc-tMe_mKoeNIx4vLR4nFVV9ai6ImpJ2PK3JK07Q/edit?usp=sharing",
   // },
-  {
-    title: "Spot Sense",
-    description:
-      "A user-friendly web app that simplifies skin cancer detection through real-time detection, and instant advice.",
-    image: "/spotsense_cover.png?height=300&width=500",
-    tags: ["Python", "Tensorflow", "Firebase"],
-    github: "https://github.com/maxtmiller/Spot-Sense",
-    demo: "https://youtu.be/dvp7egOsSl4",
-  },
+  // {
+  //   title: "Spot Sense",
+  //   description:
+  //     "A user-friendly web app that simplifies skin cancer detection through real-time detection, and instant advice.",
+  //   image: "/spotsense_cover.png?height=300&width=500",
+  //   tags: ["Python", "Tensorflow", "Firebase"],
+  //   github: "https://github.com/maxtmiller/Spot-Sense",
+  //   demo: "https://youtu.be/dvp7egOsSl4",
+  // },
   // {
   //   title: "AI Vault",
   //   description:
@@ -99,9 +127,12 @@ const projects = [
   // },
   {
     title: "Uniply",
-    description:
-      "An iOS app to help students apply to universities and provide lots of resources for specific courses.",
-    image: "/uniply_cover.png?height=300&width=200",
+    description: "An iOS app to help students apply to universities and provide lots of resources for specific courses.",
+    image: {
+      src: "/uniply_cover.png",
+      zoom: "scale-[1.1]",
+      gap: true,
+    },
     tags: ["SwiftUI", "XCode", "Figma"],
     github: "https://github.com/maxtmiller/Uniply",
     demo: "https://youtu.be/sO30QM-T47c",
@@ -143,21 +174,19 @@ export default function Projects() {
               className="group"
             >
               <Card className="h-full overflow-hidden bg-card/50 backdrop-blur border-primary/10 shadow-lg transition-all duration-300 hover:shadow-primary/20 hover:border-primary/30">
-                <div className="relative h-48 w-full overflow-hidden">
+                <div className={`relative h-48 w-full overflow-hidden`}>
+                  <div className={`${project.image?.gap === true ? "pt-[20px]" : "pt-[0px]"}`} />
                   <Image
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image?.src || "/placeholder.svg"}
                     alt={project.title}
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className={`
+                      object-cover object-top w-full h-full
+                      transition-transform duration-500
+                      ${project.image?.zoom || "scale-[1]"}
+                      group-hover:scale-125
+                    `}
                     width={500}
                     height={300}
-                    style={
-                      project.title === "Uniply"
-                        ? {
-                            margin: "0 auto",
-                            top: "0 !important",
-                          }
-                        : {}
-                    }
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
@@ -190,10 +219,10 @@ export default function Projects() {
                     variant="ghost"
                     size="sm"
                     asChild
-                    disabled={project.title !== "CS2Vault"}
+                    disabled={project.title === "CS2 Vault"}
                   >
                     <a
-                      href={project.github}
+                      href={project.title === "CS2 Vault" ? undefined : project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary"

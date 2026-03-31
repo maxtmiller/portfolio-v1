@@ -17,7 +17,11 @@ const experiences = [
       "Integrated RAG methods into application, enabling source traceability, content quality reports, and an AI chat",
       "Automated scalable cloud deployment using Azure Bicep and Azure App Service for hosting",
     ],
-    image: "/jenly_logo.png?height=80&width=80",
+    image_details: {
+      url: "/jenly_logo.png",
+      height: 80,
+      width: 80,
+    },
     tags: ["Typescript", "React", "MSFT Office APIs"]
   },
   {
@@ -29,7 +33,11 @@ const experiences = [
       "Build a Electron Windows App to streamline patient data management and monitor illness outbreaks",
       "Implemented offline data storage and excel export functionality with PostgreSQL",
     ],
-    image: "/artemed_logo.png?height=80&width=80",
+    image_details: {
+      url: "/artemed_logo.png",
+      height: 80,
+      width: 80,
+    },
     tags: ["Javascript", "Electron", "PostgreSQL"]
   },
   {
@@ -41,7 +49,11 @@ const experiences = [
       "Developed a game-recommendation system using Steam APIs to analyze user data and deliver suggestions",
       "Led a team of four students in project development and presented results to Google host team",
     ],
-    image: "/google_logo.png?height=80&width=80",
+    image_details: {
+      url: "/google_logo.png",
+      height: 80,
+      width: 80,
+    },
     tags: ["Javascript", "Node.js", "Express"]
   },
 ]
@@ -100,9 +112,10 @@ export default function Experience() {
                       >
                         <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                           <Image
-                            src={exp.image || "/placeholder.svg"}
+                            src={exp.image_details.url || "/placeholder.svg"}
                             alt={exp.company}
-                            fill
+                            height={exp.image_details.height}
+                            width={exp.image_details.width}
                             className="object-cover"
                           />
                           <div className="absolute inset-0 bg-gradient-to-br to-transparent mix-blend-overlay"></div>

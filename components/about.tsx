@@ -106,16 +106,17 @@ export default function About() {
                 <div className="border-l-2 border-primary/50 pl-4 py-2 flex items-center space-x-4">
                   <div className="relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                     <Image
-                      src={"/waterloo_logo.png?height=80&width=80"}
+                      src={"/waterloo_logo.png"}
+                      height={80}
+                      width={80}
                       alt={"Waterloo"}
-                      fill
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br to-transparent mix-blend-overlay"></div>
                   </div>
                   <div>
                     <h4 className="font-semibold">University of Waterloo</h4>
-                    <p className="text-sm text-muted-foreground">Bachelor&apos;s of Mathematics</p>
+                    <p className="text-sm text-muted-foreground">Bachelor of Mathematics</p>
                     <p className="text-sm text-muted-foreground">Sep 2024 - Present</p>
                   </div>
                 </div>

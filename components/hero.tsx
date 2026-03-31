@@ -72,7 +72,7 @@ export default function Hero() {
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl shadow-primary/20">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10 mix-blend-overlay"></div>
               <Image
-                src="/profile.png?height=320&width=320"
+                src="/profile.png"
                 alt="Maximilian Miller"
                 width={320}
                 height={320}

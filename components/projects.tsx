@@ -17,9 +17,35 @@ import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
+    title: "UW Grad Graph",
+    description:
+      "Visualize your Waterloo courses and requirements as an interactive graph, and plan your academic journey.",
+    image: {
+      src: "/uwgradgraph_cover.png",
+      zoom: "scale-100",
+      gap: false,
+    },
+    tags: ["Typescript", "React", "Zustand"],
+    github: "https://github.com/maxtmiller/UWGradGraph",
+    demo: "https://uw-grad-graph.vercel.app/",
+  },
+  {
+    title: "Sahayyo",
+    description:
+      "A visual-first guide for Rohingya refugees in Canada, using audio and visual workflows to navigate daily life.",
+    image: {
+      src: "/sahayyo_cover.png",
+      zoom: "scale-100",
+      gap: false,
+    },
+    tags: ["Javascript", "React", "Express"],
+    github: "https://github.com/hojundev/Sahayyo",
+    demo: "https://youtu.be/0rMyjVHZDy0",
+  },
+  {
     title: "Pin Sieve",
     description:
-      "AI-powered Chrome extension that analyzes Pinterest boards to generate highly personalized gift ideas.",
+      "An AI-powered Chrome extension that analyzes Pinterest boards to generate highly personalized gift ideas.",
     image: {
       src: "/pinsieve_cover.png",
       zoom: "scale-100",
@@ -45,7 +71,7 @@ const projects = [
   {
     title: "Alpha Poisson",
     description:
-      "Battle against our self-trained AI chess engines, crafted by the Échec et mat du poisson team.",
+      "Battle against our policy-value self-trained AI chess engines, crafted by the Échec et mat du poisson team.",
     image: {
       src: "/alphapoisson_cover.png",
       zoom: "scale-[1.15]",
@@ -57,7 +83,7 @@ const projects = [
   },
   {
     title: "CS2 Vault",
-    description: "Effortlessly view all your CS2 items, and discover the best suggestions for your collection.",
+    description: "Access your entire CS2 inventory, with AI-driven insights for completing your collection and sticker crafting.",
     image: {
       src: "/cs2vault_cover.png",
       zoom: "scale-[1.6]",
@@ -89,15 +115,19 @@ const projects = [
   //   github: "https://github.com/maxtmiller/Crypto-Companion",
   //   demo: "https://docs.google.com/presentation/d/1s3Jvc-tMe_mKoeNIx4vLR4nFVV9ai6ImpJ2PK3JK07Q/edit?usp=sharing",
   // },
-  // {
-  //   title: "Spot Sense",
-  //   description:
-  //     "A user-friendly web app that simplifies skin cancer detection through real-time detection, and instant advice.",
-  //   image: "/spotsense_cover.png?height=300&width=500",
-  //   tags: ["Python", "Tensorflow", "Firebase"],
-  //   github: "https://github.com/maxtmiller/Spot-Sense",
-  //   demo: "https://youtu.be/dvp7egOsSl4",
-  // },
+  {
+    title: "Spot Sense",
+    description:
+      "Real-time skin cancer classification using a custom deep learning model and instant diagnostic guidance.",
+    image: {
+      src: "/spotsense_cover.png",
+      zoom: "scale-[1]",
+      gap: false,
+    },
+    tags: ["Python", "Tensorflow", "Firebase"],
+    github: "https://github.com/maxtmiller/Spot-Sense",
+    demo: "https://youtu.be/dvp7egOsSl4",
+  },
   // {
   //   title: "AI Vault",
   //   description:
@@ -222,7 +252,7 @@ export default function Projects() {
                     disabled={project.title === "CS2 Vault"}
                   >
                     <a
-                      href={project.title === "CS2 Vault" ? undefined : project.github}
+                      href={(project.title === "UW Grad Graph") ? undefined : project.github}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-primary"
@@ -244,7 +274,8 @@ export default function Projects() {
                         project.title === "AI Vault" ||
                         project.title === "Fluent Flow" ||
                         project.title === "Spot Sense" ||
-                        project.title === "Biquadris"
+                        project.title === "Biquadris" ||
+                        project.title === "Sahayyo"
                           ? "View Demo"
                           : "View Project"}
                       </span>

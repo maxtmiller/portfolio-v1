@@ -25,6 +25,14 @@ if (typeof window === 'undefined' && process.env.NODE_ENV === 'production') {
     })().catch(console.error);
 }
 
+// Run once during development to create the index
+// if (process.env.NODE_ENV === 'development') {
+//     (async () => {
+//         await redisClient.connect();
+//         await setupCacheIndex();
+//     })();
+// }
+
 
 // async function setupCacheIndex() {
 //     try {

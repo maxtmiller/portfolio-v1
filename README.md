@@ -6,6 +6,10 @@
 
 ---
 
+## Preview
+
+<img width="1706" height="941" alt="Screenshot 2026-09-09 at 6 17 27 in the evening" src="https://github.com/user-attachments/assets/fa415142-21c1-4cf4-a294-e71cbe9433b3" />
+
 ## RAG Pipeline
 
 The chat widget ("Proxy AI") is backed by a LangChain pipeline that routes queries through different retrieval strategies depending on complexity.

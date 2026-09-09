@@ -340,35 +340,42 @@ export default function Chatbox() {
         };
 
         try {
-            const res = await fetch("/api/chat", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ question: message, messages, ragSettings }),
-            });
-            const data = await res.json();
-            if (res.status === 429) {
-                setShowRateLimitError(true);
-                setTimeout(() => setShowRateLimitError(false), 5000);
-                setMessages((prev) => prev.slice(0, -1));
-                setIsLoading(false);
-                return;
-            }
-            if (data?.answer) {
-                const newMessages = [...messages, userMsg, { role: "assistant", content: data.answer }];
-                setMessages(newMessages);
-                fetchSuggestions(newMessages);
+            setLoadingTrace(false);
+            const deprecationMessage = "this chat is deprecated. the rag pipeline is still in the [repo](https://github.com/maxtmiller/portfolio-v1).";
+            const newMessages = [...messages, userMsg, { role: "assistant", content: deprecationMessage }];
+            setMessages(newMessages);
 
-                setTimeout(() => {
-                    if (lastMessageRef.current) {
-                        lastMessageRef.current.scrollTop = lastMessageRef.current.scrollHeight;
-                    }
-                }, 50);
-            }
-            setIsLoading(false);
-            if (data?.runId) {
-                fetchTraceInBackground(data.runId);
+            if (false) {
+                const res = await fetch("/api/chat", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: message, messages, ragSettings }),
+                });
+                const data = await res.json();
+                if (res.status === 429) {
+                    setShowRateLimitError(true);
+                    setTimeout(() => setShowRateLimitError(false), 5000);
+                    setMessages((prev) => prev.slice(0, -1));
+                    setIsLoading(false);
+                    return;
+                }
+                if (data?.answer) {
+                    const newMessages = [...messages, userMsg, { role: "assistant", content: data.answer }];
+                    setMessages(newMessages);
+                    fetchSuggestions(newMessages);
+
+                    setTimeout(() => {
+                        if (lastMessageRef.current) {
+                            lastMessageRef.current.scrollTop = lastMessageRef.current.scrollHeight;
+                        }
+                    }, 50);
+                }
+                setIsLoading(false);
+                if (data?.runId) {
+                    fetchTraceInBackground(data.runId);
+                }
             }
         } catch (err) {
             setMessages((prev) => [
